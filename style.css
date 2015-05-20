@@ -1,0 +1,184 @@
+html{
+	background-color: #e6e6e8;
+	font-family: 'Lato', sans-serif;
+}
+.icon{
+  position:absolute;
+  margin-top:-31px;
+  margin-left:310px;
+  height:14px;
+  width:22px;
+  background-color:#ffffff;
+  border-bottom: 2px  solid #d5d5d6;
+  border-left: 2px  solid #d5d5d6;
+  border-right: 2px  solid #d5d5d6;
+  border-top: 6px  solid #d5d5d6;
+}
+#text{
+	font-family: 'Lato', sans-serif;
+	font-size: 14pt;
+}
+input[type="text"] {
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 40px;
+  	position:relative;
+	width: 310px;
+	height: 38px;
+	border: 0px;
+}
+.calendar-container{
+	margin-top: 20px;
+	margin-left:40px;
+	width: 310px;
+	height: 340px;
+	position: relative;
+	background-color: #323439;
+	padding-bottom: 20px;
+}
+.calendar-header{
+	background-color: #5a5b5f;
+}
+#calendar-month-year{
+	margin: 0 auto;
+	width: 200px;
+	height: 40px;
+	color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+}
+#calendar-month-year:hover{
+	background-color: #e8736f;
+	border-radius: 100px 100px 100px 100px;
+	cursor: default;
+}
+#calendar-dates{
+	padding-bottom: 10px;
+	color: #ffffff;
+	background-color: #323439;
+}
+#calendar-dates table{
+	margin: 0 auto;
+}
+.calendar-number tr td{
+	text-transform: uppercase;
+}
+td{
+	width: 28px;
+	height: 32px;
+	padding-right: 3px;
+	padding-left: 3px;
+	text-align: center;
+	border: 0;
+}
+.prev-days:hover, .next-days:hover, .current-day:hover, .days:hover{
+	cursor: default;
+	background-color: #e8736f;
+	border-radius: 50%;
+}
+.prev-days,.next-days{
+	color: #838487;
+}
+.current-day{
+	background-color: #838487;
+	border-radius: 50%;
+}
+.today{
+	width: 24px;
+	height: 28px;
+	border: 2px solid #e8736f;
+	border-radius: 50%;
+	cursor: default;
+}
+#left{
+	width: 0px;
+  	height: 0px;
+  	border: 12px solid transparent;
+  	border-top-color: #adadaf;
+  	margin: 0;
+  	padding: 0;
+  	float: left;
+  	margin-top: 8px;
+  	transform: rotate(90deg);
+}
+#left:before{
+	content:'';
+  	width: 0px;
+  	height: 0px;
+  	border: 10px solid transparent;
+  	border-top-color: #5a5b5f;
+  	display: inline-block;
+  	-webkit-transform: translate(-10px, -12px);
+}
+#left:hover{
+	border-top-color: #e8736f;
+}
+#right{
+	width: 0px;
+  	height: 0px;
+  	border: 12px solid transparent;
+  	border-top-color: #adadaf;
+  	margin: 0;
+  	padding: 0;
+  	float: right;
+  	margin-top: 8px;
+  	transform: rotate(270deg);
+}
+#right:before{
+	content:'';
+  	width: 0px;
+  	height: 0px;
+  	border: 10px solid transparent;
+  	border-top-color: #5a5b5f;
+  	display: inline-block;
+  	-webkit-transform: translate(-10px, -12px);
+}
+#right:hover{
+	border-top-color: #e8736f;
+}
+.button{
+	border-radius: 100px 100px 100px 100px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #282a2d;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.button:hover{
+	background-color: #e8736f;
+}
+.weeks{
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+}
+.month-table{
+	border-spacing: 21px;
+	padding-top: 10px;
+	padding-bottom: 3px;
+}
+.month-table tr td{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.month-table tr td:hover{
+	cursor: default;
+	background-color: #e8736f;
+	border-radius: 100px 100px 100px 100px;
+}
+.years-table{
+	padding-top: 8px;
+	border-spacing: 0px 22px;
+}
+.years-table tr td{
+
+	padding-right: 14px;
+	padding-left: 14px;
+}
+.years-table tr td:hover{
+	cursor: default;
+	background-color: #e8736f;
+	border-radius: 100px 100px 100px 100px;
+}
