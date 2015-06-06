@@ -3,16 +3,22 @@ html{
 	font-family: 'Lato', sans-serif;
 }
 .icon{
-  position:absolute;
-  margin-top:-31px;
-  margin-left:310px;
-  height:14px;
-  width:22px;
-  background-color:#ffffff;
-  border-bottom: 2px  solid #d5d5d6;
-  border-left: 2px  solid #d5d5d6;
-  border-right: 2px  solid #d5d5d6;
-  border-top: 6px  solid #d5d5d6;
+ 	position:absolute;
+  	margin-top:-31px;
+  	margin-left:310px;
+  	height:14px;
+  	width:22px;
+ 	background-color:#ffffff;
+  	border-bottom: 2px  solid #d5d5d6;
+  	border-left: 2px  solid #d5d5d6;
+  	border-right: 2px  solid #d5d5d6;
+  	border-top: 6px  solid #d5d5d6;
+}
+.icon:hover{
+	border-bottom: 2px  solid #838487;
+  	border-left: 2px  solid #838487;
+  	border-right: 2px  solid #838487;
+  	border-top: 6px  solid #838487;
 }
 #text{
 	font-family: 'Lato', sans-serif;
@@ -28,6 +34,7 @@ input[type="text"] {
 	border: 0px;
 }
 .calendar-container{
+	display: none;
 	margin-top: 20px;
 	margin-left:40px;
 	width: 310px;
@@ -64,6 +71,7 @@ input[type="text"] {
 	text-transform: uppercase;
 }
 td{
+	transition:0.3s;
 	width: 28px;
 	height: 32px;
 	padding-right: 3px;
@@ -81,6 +89,10 @@ td{
 }
 .current-day{
 	background-color: #838487;
+	border-radius: 50%;
+}
+.key{
+	background-color: #e8736f;
 	border-radius: 50%;
 }
 .today{
@@ -168,6 +180,11 @@ td{
 	background-color: #e8736f;
 	border-radius: 100px 100px 100px 100px;
 }
+.keyMonth {
+	background-color: #e8736f;
+	border-radius: 100px 100px 100px 100px;
+}
+
 .years-table{
 	padding-top: 8px;
 	border-spacing: 0px 22px;
@@ -181,4 +198,17 @@ td{
 	cursor: default;
 	background-color: #e8736f;
 	border-radius: 100px 100px 100px 100px;
+}
+.keyYear{
+	background-color: #e8736f;
+	border-radius: 100px 100px 100px 100px;
+}
+#help{
+	display: none;
+	position: relative;
+	color: #838487;
+	font-family: 'Lato', sans-serif;
+	font-size: 14pt;
+	margin-left: 175px;
+  	height:14px;
 }
