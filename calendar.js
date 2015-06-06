@@ -374,23 +374,6 @@ function putPoint(){
       input.value[5] =  " ";
     else
       input.value += " ";
-  }
-  cursorPosition = getCaretPosition(input);
-  if (cursorPosition == 1){
-    var num = parseInt(input.value.substring(0,1));
-    if (num > 3){
-      var tmp = input.value.substring(2, input.value.length);
-      input.value = "0" + num + " " + tmp;
-    }
-  }
-  cursorPosition = getCaretPosition(input);
-  if (cursorPosition == 4){
-    var num = parseInt(input.value.substring(3,4));
-    if (num > 1){
-        var dayTemp = input.value.substring(0,3);
-        var yearTemp = input.value.substring(5,9); 
-        input.value = dayTemp + "0" + num + " " + yearTemp;
-      }
   }    
 }
 
@@ -427,7 +410,7 @@ function keyPressOnInput(e){
     var val = input.value.split(' ');
     var day = parseInt(val[0]);
     day++;
-    if(day < 10)
+    if(day < 10 && day.length < 2)
       day = "0" + day;
     if (day > 31)
       return;
@@ -442,7 +425,7 @@ function keyPressOnInput(e){
     var val = input.value.split(' ');
     var day = parseInt(val[0]);
     day--;
-    if(day < 10)
+    if(day < 10 && day.length < 2)
       day = "0" + day;
     if (day <= 0)
       return;
@@ -499,7 +482,7 @@ function keyPressOnInput(e){
     e.preventDefault();
     var val = input.value.split(' ');
     year = parseInt(val[2]);
-    year++;
+    year--;
     if(year < 10)
       year = "0" + year;
     input.value = val[0] + " " + val[1] + " " + year;
@@ -541,9 +524,8 @@ function setPosCursor(){
 }
 
 function getDateWithInput(){
+  document.getElementById("help").style.display = "none";
   var input = document.getElementById("text");
-  if (input.value.length != 10)
-    return;
   var inputDay = parseInt(input.value.substring(0,2));
   if(inputDay > 31){
     inputDay = 1;
@@ -608,8 +590,8 @@ function getInfo(day, month, year){
   var input = document.getElementById("text");
   if (day == undefined)
     day = "01";
-  else if (day < 10)
-    day = "0" + day;
+  else if (parseInt(day) < 10)
+    day = "0" + parseInt(day);
   input.value = day + " " + monthName[month] + " " + year;
 }
 
@@ -733,6 +715,8 @@ function getMonthCalendar(){
     for (var j = 0; j <3; j++) {
       var td = document.createElement('td');
       td.innerHTML = monthName[count].substring(0, 3);
+      if (monthName[month].substring(0, 3) == monthName[count].substring(0, 3))
+        td.className = "keyMonth";
       count++;
       tr.appendChild(td);
     }
@@ -775,7 +759,6 @@ function getYearCalendar(){
   }
   getYearsTable(year);
 }
-
 function getYearsTable(year){
   var table = document.getElementsByTagName('table')[0];
   table.parentNode.removeChild(table);
@@ -786,6 +769,11 @@ function getYearsTable(year){
     for (var j = 0; j < 4; j++){
       var td = document.createElement('td');
       td.innerHTML = yearsInterval;
+      if (date.getFullYear() == yearsInterval)
+      {
+        td.className = "keyYear";
+        flagYear = true;
+      }
       yearsInterval++;
       tr.appendChild(td);
     }
