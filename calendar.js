@@ -769,11 +769,6 @@ function getYearsTable(year){
     for (var j = 0; j < 4; j++){
       var td = document.createElement('td');
       td.innerHTML = yearsInterval;
-      if (date.getFullYear() == yearsInterval)
-      {
-        td.className = "keyYear";
-        flagYear = true;
-      }
       yearsInterval++;
       tr.appendChild(td);
     }
